@@ -1,0 +1,29 @@
+body {
+	background-color: coral;
+	width: 800px;
+	margin: auto;
+}
+#filter_text{
+  float:left;
+  margin-right:5px;
+  margin-left:10px;
+}
+#filter{
+  float:left;
+  margin-top:15px;
+}
+table{
+  clear:both;
+  margin-left:10px;
+  border-collapse: collapse;
+}
+td, th{
+  border: 1px solid black;
+  padding: 10px;
+}
+.claseBueno{
+  background-color: green;
+}
+.claseMalo{
+  background-color: red;
+}
