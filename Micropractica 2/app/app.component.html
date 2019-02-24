@@ -1,0 +1,36 @@
+<body>
+	<p id="filter_text">Filtrar por: </p> 
+  <input id="filter" type="text" [(ngModel)]="filterModel">
+  <table> 
+    <tr>
+      <th> Foto </th>
+      <th> Marca </th>
+      <th> Modelo </th>
+      <th> Año </th>
+      <th> En venta desde </th>
+      <th> Precio </th>
+      <th> PVP </th>
+      <th> Acciones </th>
+    </tr>
+    <tr *ngFor="let coche of coches; let i = index"> 
+      <ng-container *ngIf='!coche.marca.lastIndexOf(filterModel,0) || filterModel == ""'>  
+        <td> 
+          <img *ngIf='coche.foto!= ""' src="{{coche.foto}}" width="70px" height="70px" alt="sinfoto"> 
+          <p *ngIf='coche.foto == ""'> Sin foto </p>
+        </td>
+        <td> {{coche.marca | uppercase}} </td>
+        <td> {{coche.modelo | lowercase}} </td>
+        <td> {{coche.fecha_modelo | date:'yyyy'}} </td>
+        <td> {{coche.fecha_venta | date:'MM-yyyy'}} </td>
+        <td> 
+          <p [ngClass]='{claseBueno: coche.estado==bueno, claseMalo: coche.estado==malo}'> {{coche.precio | number}}€</p> 
+        </td>
+        <td> {{coche.getPVP() | number}}€ </td>
+        <td> 
+          <input class="rebajar" type="button" value="Rebajar" (click)="coche.rebajar()">
+          <input class="vendido" type="button" value="Vendido" (click)="remove(i)">
+        </td>
+      </ng-container>  
+    </tr>
+  </table>
+</body>
