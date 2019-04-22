@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Medicitas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="body">
+  <div id="frame">
+    <p>Inicia sesión para acceder a la plataforma</p>
+    <button ion-button  id="patientButton" (click)="goToSignInPatientPage()">Iniciar como paciente</button>
+    <button ion-button id="doctorButton" (click)="goToDoctorPage()">Iniciar como personal sanitario</button>
+  </div>
+</ion-content>

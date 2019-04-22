@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img id="backButton" src="../../assets/imgs/back.png" alt="back" (click)="goBack()">
+      Medicitas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="body">
+  <form (ngSubmit)="createAppointment(f.value)" #f="ngForm">
+    <p>Selecciona el tipo de cita</p>
+    <select>
+      <option value="doctor">Médico de familia</option>
+      <option value="nursing">Personal de enfermería</option>
+      <option value="specialist">Médico especialista</option>
+    </select>
+    <div id="appointmentDay">
+      <p>Selecciona el dia de tu cita</p>
+      <input type="date" name="date" ngModel required>
+      <img src="../../assets/imgs/calendario.png" alt="calendario">
+    </div>
+    <div id="appointmentTime">
+      <p>Selecciona la hora de tu cita</p>
+      <select id="time" name="time" ngModel required>
+        <option value="17:15">17:15</option>
+        <option value="17:45">17:45</option>
+        <option value="18:15">18:15</option>
+        <option value="18:30">18:30</option>
+        <option value="19:00">19:00</option>
+        <option value="19:45">19:45</option>
+      </select>
+      <img src="../../assets/imgs/reloj.png" alt="reloj">
+    </div>
+    <button ion-button id="save" type="submit" [disabled]="!f.valid">Confirmar</button>
+    </form>
+    <div id="modalBackground1">
+      <div class="modalBox">
+        <img id="tick" src="../../assets/imgs/tick.png" alt="tick">
+        <p>Su cita se ha realizado con exito</p>
+        <button ion-button class="confirm" (click)="goBack()">Confirmar</button>
+      </div>
+    </div>
+    <div id="modalBackground2">
+      <div class="modalBox">
+        <img id="sadFace" src="../../assets/imgs/sadFace.png" alt="sadFace">
+        <p>No puedes realizar una cita anterior a hoy</p>
+        <button ion-button class="confirm" (click)="exitModal()">Confirmar</button>
+      </div>
+    </div>
+</ion-content>

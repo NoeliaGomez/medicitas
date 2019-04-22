@@ -1,0 +1,53 @@
+page-time-table {
+  ion-title{
+    text-align: center;
+    margin-top: 6%;
+  }
+  ion-navbar{
+    height: 70px;
+  }
+  p{
+    font-size: large;
+    width: 80%;
+    margin-top: 10%;
+    margin-right: 0;
+  }
+  .finishedAppointment{
+    text-decoration: line-through;
+    text-align: center;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 3px;
+    width: 100%;
+  }
+  .remainingAppointment{
+    text-align: center;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 3px;
+    width: 100%;
+  }
+  .myAppointment{
+    color: red;
+  }
+  #body{
+    background: url('../assets/imgs/background2.jpeg');
+  }
+  #timeTable{
+    background-color: white;
+  }
+  #backButton{
+    background-color: transparent;
+    border-radius: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color:black;
+    margin: 0;
+    height: 20px;
+    width: 20px;
+    float: left;
+  }
+  .back-button.show-back-button {
+    display: none;
+  }
+}

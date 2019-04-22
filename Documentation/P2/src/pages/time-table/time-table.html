@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img id="backButton" src="../../assets/imgs/back.png" alt="back" (click)="goBack()">
+      Medicitas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="body">
+  <p>Citas en tiempo real</p>
+  <div id="timeTable">
+    <ng-container *ngFor='let finishedAppointment of finishedAppointments'>
+        <p class="finishedAppointment" [style.color]="getColor(finishedAppointment.securityNumber)">{{finishedAppointment.time}}</p>
+    </ng-container>
+    <ng-container *ngFor='let remainingAppointment of remainingAppointments'>
+        <p class="remainingAppointment" *ngIf='isToday(remainingAppointment.date)' [style.color]="getColor(remainingAppointment.securityNumber)">{{remainingAppointment.time}}</p>
+    </ng-container>
+  </div>
+  <p><span>Tu cita</span> tiene aproximadamente 20 minutos de retraso.</p>
+</ion-content>
