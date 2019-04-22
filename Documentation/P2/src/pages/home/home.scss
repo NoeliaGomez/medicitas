@@ -1,0 +1,46 @@
+$Blue:#3F7FBF;
+page-home{
+  ion-title{
+    text-align: center;
+    margin-top: 6%;
+  }
+  ion-navbar{
+    height: 70px;
+  }
+  p{
+    text-align: center;
+    font-size: x-large;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20%;
+  }
+  #body{
+    background: url('../assets/imgs/background2.jpeg');
+  }
+  #frame{
+    background-color: rgba(250, 250, 250, 0.4);
+    border-radius: 5%;
+    overflow: auto;
+    height: 70%;
+    margin-top: 12%;
+  }
+  #patientButton{
+    float: left;
+    width: 80%;
+    height: 15%;
+    margin-left: 10%;
+    margin-top: 10%;
+    background-color: $Blue;
+  }
+  #doctorButton{
+    float: left;
+    width: 80%;
+    height: 15%;
+    margin-left: 10%;
+    margin-top: 7%;
+    background-color: $Blue;
+  }
+  .back-button.show-back-button {
+    display: none;
+  }
+}

@@ -1,0 +1,22 @@
+
+<ng-container *ngFor='let remainingAppointment of appointments'>
+    <p class="remainingAppointment" *ngIf='remainingAppointment.finished == 0 && isToday(remainingAppointment.date)'>{{remainingAppointment.time}}</p>
+</ng-container><ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img id="backButton" src="../../assets/imgs/back.png" alt="back" (click)="goBack()">
+      Medicitas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="body">
+  <p>Citas en tiempo real</p>
+  <div id="timeTable">
+    <ng-container *ngFor='let remainingAppointment of remainingAppointments'>
+        <p class="remainingAppointment" *ngIf='isToday(remainingAppointment.date)'>{{remainingAppointment.time}}</p>
+    </ng-container>
+  </div>
+  <button ion-button id="downButton" (click)="delayAppointment()">Retrasar paciente</button>
+  <button ion-button id="delete" (click)="deleteAppointment()">Llamar paciente</button>
+</ion-content>

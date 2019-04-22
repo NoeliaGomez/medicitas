@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img id="backButton" src="../../assets/imgs/back.png" alt="back" (click)="goBack()">
+      Medicitas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="body">
+  <form (ngSubmit)="signInDoctor(f.value)" #f="ngForm">
+    <div id="number">
+      <p>Número de colegiado</p>
+      <input type="number" name="number" ngModel required>
+    </div>
+    <div id="code">
+      <p>Código de seguridad</p>
+      <input type="date" name="date" ngModel required>
+    </div>
+    <button ion-button id="save" type="submit" [disabled]="!f.valid">Confirmar</button>
+    </form>
+</ion-content>

@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img id="backButton" src="../../assets/imgs/back.png" alt="back" (click)="goBack()">
+      Medicitas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="body">
+  <div id="frame">
+    <p>Elige a qué funcionalidad quieres acceder</p>
+    <button ion-button  id="patientButton" (click)="goToAppointmentPage()">Pedir cita</button>
+    <button ion-button id="doctorButton" (click)="goToTimeTablePage()">Ver horario</button>
+  </div>
+</ion-content>
